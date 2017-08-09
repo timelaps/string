@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/timelaps/string/issues"
   },
-  "homepage": "https://github.com/timelaps/string#readme"
+  "homepage": "https://github.com/timelaps/string#readme",
+  "devDependencies": {
+    "@timelaps/batterie": "^1.0.71"
+  },
+  "dependencies": {
+    "@timelaps/to": "^1.0.4"
+  }
 }
