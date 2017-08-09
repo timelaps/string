@@ -1,5 +1,5 @@
 var b = require('@timelaps/batterie');
-var deburrLetters = require('../deburr/letters');
+var deburrLetters = require('.');
 b.describe('deburrLetters', function () {
     b.expect(deburrLetters).toBeObject();
 });

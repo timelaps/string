@@ -1,4 +1,4 @@
-var keys = require('@timelaps/object/keys');
+var keys = require('@timelaps/n/keys');
 var isNil = require('@timelaps/is/nil');
 module.exports = createEscaper;
 

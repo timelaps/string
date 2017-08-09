@@ -22,6 +22,11 @@
     "@timelaps/batterie": "^1.0.71"
   },
   "dependencies": {
+    "@timelaps/array": "^1.0.4",
+    "@timelaps/fn": "^1.0.4",
+    "@timelaps/hacks": "^1.0.1",
+    "@timelaps/n": "^1.0.14",
+    "@timelaps/object": "^1.0.15",
     "@timelaps/to": "^1.0.4"
   }
 }

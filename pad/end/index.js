@@ -1,6 +1,6 @@
 var toString = require('@timelaps/to/string');
 var toInteger = require('@timelaps/to/integer');
-var createPadding = require('../create-padding');
+var createPadding = require('../../create-padding');
 module.exports = padEnd;
 
 function padEnd(string_, length_, chars) {

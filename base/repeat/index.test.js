@@ -1,4 +1,4 @@
-var repeat = require('../base/repeat');
+var repeat = require('.');
 var b = require('@timelaps/batterie');
 b.describe('repeat', function () {
     b.expect(repeat).toBeFunction();

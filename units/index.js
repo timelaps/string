@@ -1,5 +1,5 @@
-var customUnits = require('../units/custom');
-var baseUnitList = require('../units/list');
+var customUnits = require('./custom');
+var baseUnitList = require('./list');
 units.list = baseUnitList.slice(0);
 module.exports = units;
 

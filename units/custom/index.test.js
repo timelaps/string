@@ -1,4 +1,4 @@
-var customUnits = require('../units/custom');
+var customUnits = require('../custom');
 var b = require('@timelaps/batterie');
 b.describe('customUnits', function () {
     b.expect(customUnits).toBeFunction();

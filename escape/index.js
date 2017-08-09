@@ -1,1 +1,1 @@
-module.exports = require('../create-escaper')(require('../escape/map'));
+module.exports = require('../create-escaper')(require('./map'));
