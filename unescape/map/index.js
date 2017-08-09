@@ -1,0 +1,1 @@
+module.exports = require('@timelaps/object/invert')(require('../escape/map'));

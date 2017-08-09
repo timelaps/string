@@ -1,0 +1,1 @@
+require('@timelaps/batterie').expect(require('.')).toBeObject();
