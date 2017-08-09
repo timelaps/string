@@ -1,0 +1,21 @@
+module.exports = {
+    asciiWords: require('./ascii-words'),
+    capitalize: require('./capitalize'),
+    case: require('./case'),
+    createCompunder: require('./create-compounder'),
+    createEscaper: require('./create-escaper'),
+    createPadding: require('./create-padding'),
+    deburr: require('./deburr'),
+    escape: require('./escape'),
+    hasUnicodeWords: require('./has-unicode-word'),
+    indent: require('./indent'),
+    match: require('./match'),
+    pad: require('./pad'),
+    regexp: require('./regexp'),
+    slice: require('./slice'),
+    unescape: require('./unescape'),
+    unicodeWords: require('./unicode-words'),
+    units: require('./units'),
+    uuid: require('./uuid'),
+    words: require('./words')
+};

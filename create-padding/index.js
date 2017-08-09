@@ -3,7 +3,7 @@ var toArray = require('@timelaps/to/array');
 var baseRepeat = require('../base/repeat');
 var baseToString = require('@timelaps/to/base/string');
 var isUndefined = require('@timelaps/is/undefined');
-var castSlice = require('../cast-slice');
+var castSlice = require('../slice');
 var hasUnicode = require('../has-unicode-word');
 module.exports = createPadding;
 
