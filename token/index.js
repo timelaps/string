@@ -4,6 +4,7 @@ var reduce = require('@timelaps/array/reduce');
 var find = require('@timelaps/array/find');
 var isNil = require('@timelaps/is/nil');
 var isFalse = require('@timelaps/is/false');
+var returnsFirst = require('@timelaps/returns/first');
 
 function newLine(memo) {
     return memo.concat('\n');
@@ -17,6 +18,7 @@ function tokenator(options) {
     var block = options.block || /(\r|\n)/igm;
     var lines = target.split(block);
     var memo = options.memo || '';
+    var finished = options.finishBlock || returnsFirst;
     return reduce(lines, operateOnLine, memo);
 
     function operateOnLine(memo, item, index, lines) {
@@ -39,6 +41,7 @@ function tokenator(options) {
             }, memo);
         }
         line = lines.length - 1 !== index && lines[index];
+        result = finished(result, line, index);
         return isFalse(line) ? result : execHandle(result, line, index);
     }
 }
