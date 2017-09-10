@@ -21,6 +21,7 @@ require('./pad/start/index.test');
 require('./regexp/apos/index.test');
 require('./regexp/ascii-word/index.test');
 require('./regexp/unicode-word/index.test');
+require('./token/index.test');
 require('./type/index.test');
 require('./unescape/index.test');
 require('./unescape/map/index.test');
