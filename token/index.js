@@ -35,13 +35,18 @@ function tokenator(options) {
                         }
                     });
                 if (token && token.handle) {
-                    m = token.handle(memo, item, index, toArray(matched), lineindex);
+                    matched = toArray(matched);
+                    m = token.handle(memo, item, index, matched, lineindex);
                 }
                 return m;
             }, memo);
         }
         line = lines.length - 1 !== index && lines[index];
         result = finished(result, line, index);
-        return isFalse(line) ? result : execHandle(result, line, index);
+        if (isFalse(line)) {
+            return result;
+        } else {
+            return execHandle(result, line, index);
+        }
     }
 }
