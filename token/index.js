@@ -14,6 +14,7 @@ function tokenator(options) {
     var regexp = options.match || /(\s+|\W|\w+)/igm;
     var target = options.target || '';
     var tokens = options.tokens || [];
+    var iterator = options.eater || eater;
     var execHandle = options.newBlock || newLine;
     var block = options.block || /(\r|\n)/igm;
     var lines = target.split(block);
@@ -21,25 +22,30 @@ function tokenator(options) {
     var finished = options.finishBlock || returnsFirst;
     return reduce(lines, operateOnLine, memo);
 
+    function eater(options, lineindex) {
+        var tokens = options.tokens || [];
+        return function (memo, item, index) {
+            var matched, m = memo,
+                token = find(tokens, function (token) {
+                    var match = token.match || /./igm;
+                    if (match) {
+                        matched = item.match(match);
+                        return matched;
+                    }
+                });
+            if (token && token.handle) {
+                matched = toArray(matched);
+                m = token.handle(memo, item, index, matched, lineindex);
+            }
+            return m;
+        };
+    }
+
     function operateOnLine(memo, item, index, lines) {
         var lineindex, line, result = memo;
         if (item) {
             lineindex = index;
-            result = reduce(item.match(regexp), function (memo, item, index) {
-                var matched, m = memo,
-                    token = find(tokens, function (token) {
-                        var match = token.match || /./igm;
-                        if (match) {
-                            matched = item.match(match);
-                            return matched;
-                        }
-                    });
-                if (token && token.handle) {
-                    matched = toArray(matched);
-                    m = token.handle(memo, item, index, matched, lineindex);
-                }
-                return m;
-            }, memo);
+            result = reduce(item.match(regexp), eater(options, lineindex), memo);
         }
         line = lines.length - 1 !== index && lines[index];
         result = finished(result, line, index);
