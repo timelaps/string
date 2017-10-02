@@ -45,7 +45,7 @@ function tokenator(options) {
         var lineindex, line, result = memo;
         if (item) {
             lineindex = index;
-            result = reduce(item.match(regexp), eater(options, lineindex), memo);
+            result = reduce(item.match(regexp), iterator(options, lineindex), memo);
         }
         line = lines.length - 1 !== index && lines[index];
         result = finished(result, line, index);
