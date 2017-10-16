@@ -1,6 +1,6 @@
 module.exports = tokenator;
 var toArray = require('@timelaps/to/array');
-var reduce = require('@timelaps/n/reduce');
+var reduce = require('@timelaps/array/reduce');
 var find = require('@timelaps/array/find');
 var isNil = require('@timelaps/is/nil');
 var isFalse = require('@timelaps/is/false');
