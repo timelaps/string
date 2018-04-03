@@ -11,7 +11,7 @@ function newLine(memo) {
 }
 
 function tokenator(options) {
-    var regexp = options.match || /(\s+|\W|\w+)/igm;
+    var regexp = options.match || /(\s+|\W+|\w+)/igm;
     var target = options.target || '';
     var tokens = options.tokens || [];
     var iterator = options.eater || eater;
